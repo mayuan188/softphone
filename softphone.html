@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="/support/api/61.0/lightning/opencti_min.js"></script>
+</head>
+
+<body>
+  <h3>Softphone Ready ✅</h3>
+
+  <button onclick="test()">テスト発信</button>
+
+  <script>
+    function test() {
+      sforce.opencti.screenPop({
+        type: "CONTACT",
+        params: { phone: "09012345678" }
+      });
+    }
+  </script>
+</body>
+</html>
