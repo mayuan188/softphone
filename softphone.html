@@ -11,9 +11,10 @@
 
   <script>
     function test() {
-      sforce.opencti.screenPop({
-        type: "CONTACT",
-        params: { phone: "09012345678" }
+      sforce.opencti.searchAndScreenPop({
+        searchParams: "08099998888",
+        callType: "INBOUND",
+        deferred: false
       });
     }
   </script>
