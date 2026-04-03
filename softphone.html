@@ -5,23 +5,28 @@
 </head>
 
 <body>
-  <h3>MySoftphone Ready ✅</h3>
+  <h3>Softphone TEST</h3>
 
+  <button onclick="test()">テスト</button>
   <button onclick="incomingCall()">📞 着信テスト</button>
-  
+
   <script>
-  function incomingCall() {
-    const phone = "08099998888";
-  
-    sforce.opencti.searchAndScreenPop({
-      searchParams: phone,
-      callType: "INBOUND",
-      deferred: false,
-      callback: function(response) {
-        console.log("結果:", response);
-      }
-    });
-}
-</script>
+    function test() {
+      alert("OK");
+      console.log("点击成功");
+    }
+
+    function incomingCall() {
+      console.log("开始执行");
+
+      sforce.opencti.searchAndScreenPop({
+        searchParams: "08099998888",
+        callType: "INBOUND",
+        callback: function(res) {
+          console.log("结果:", res);
+        }
+      });
+    }
+  </script>
 </body>
 </html>
