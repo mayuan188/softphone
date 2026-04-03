@@ -7,16 +7,21 @@
 <body>
   <h3>Softphone Ready ✅</h3>
 
-  <button onclick="test()">テスト発信</button>
-
+  <button onclick="incomingCall()">📞 着信テスト</button>
+  
   <script>
-    function test() {
-      sforce.opencti.searchAndScreenPop({
-        searchParams: "08099998888",
-        callType: "INBOUND",
-        deferred: false
-      });
-    }
-  </script>
+  function incomingCall() {
+    const phone = "08099998888";
+  
+    sforce.opencti.searchAndScreenPop({
+      searchParams: phone,
+      callType: "INBOUND",
+      deferred: false,
+      callback: function(response) {
+        console.log("結果:", response);
+      }
+    });
+}
+</script>
 </body>
 </html>
